@@ -1,3 +1,304 @@
-.main {
-    color: red;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+}
+#root {
+    height: 100vh;
+}
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 60px;
+    background-color: rgb(6, 78, 138);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+        height: 40px;
+    }
+}
+
+section {
+    grid-column: 2 / 12;
+    grid-row: 1 / -1;
+    height: 90vh;
+    text-align: center;
+    padding-bottom: 100px;
+    & .objectsummary {
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid rgb(210, 210, 210);
+        & img {
+            width: 15px;
+            margin-right: 5px;
+        }
+        & .costsummary {
+            display: inline-block;
+            margin: 10px 25px;
+            & img {
+                width: 25px;
+                margin-right: 0;
+            }
+            & p {
+                margin: 0;
+            }
+        }
+        & .CircularProgressbar {
+            width: 55px;
+            margin: 10px;
+        }
+    }
+    & h2 {
+        font-weight: normal;
+        color: rgb(6, 78, 138);
+        font-size: 1.75rem;
+        margin: 10px auto 5px auto;
+    }
+    & h3 {
+        font-weight: normal;
+        color: rgb(6, 78, 138);
+        font-size: 0.8rem;
+    }
+    & p {
+        margin: 5px 0;
+    }
+    & img {
+        width: 40px;
+    }
+    & ul {
+        text-decoration: none;
+        list-style: none;
+    }
+    & .subcategory {
+        border: 1px dashed rgb(235, 235, 235);
+        margin: 5px;
+        padding: 2px 15px 2px 5px;
+        display: inline-flex;
+        & p {
+            color: rgb(210, 210, 210);
+            font-size: 1rem;
+            position: relative;
+        }
+        & button {
+            width: 20px;
+            height: 20px;
+            font-size: 1.1rem;
+            border:0;
+            padding: 0;
+            background: rgb(245, 245, 245);
+            color: rgb(210, 210, 210);
+            position: relative;
+            top: 5px;
+            right: -10px;
+        }
+        & button.done {
+            background: rgb(164, 219, 127);
+            color: rgb(255, 255, 255);
+        }
+    }
+    & .subcategory.active {
+        border: 2px solid rgb(150, 150, 150);
+        & p {
+            color: rgb(150, 150, 150);
+        }
+    }
+}
+
+.fullwidthbtn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    background: rgb(6, 78, 138);
+    padding: 15px 0 15px 0;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+footer {
+    grid-column: 1 / -1;
+    height: 25px;
+    border-top: 1px solid rgb(210, 210, 210);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* START - Burger-menu custom styles */
+.bm-burger-button {
+    position: fixed;
+    width: 28px;
+    height: 22px;
+    right: 36px;
+    top: 19px;
+}
+
+.bm-burger-bars {
+    background: #ffffff;
+}
+
+.bm-cross-button {
+    height: 30px;
+    width: 30px;
+}
+
+.bm-cross {
+    background: #696969;
+}
+
+.bm-menu {
+    background: #ffffff;
+    padding: 0.5rem;
+    font-size: 1.20rem;
+    width: 320px;
+    & a:link {
+        color: rgb(6, 78, 138);
+        text-decoration: none;
+    }
+    & a:visited {
+        color: rgb(6, 78, 138);
+        text-decoration: none;
+    }
+    & a:focus {
+        color: rgb(6, 78, 138);
+        text-decoration: none;
+    }
+    & a:hover {
+        color: rgb(6, 78, 138);
+        text-decoration: none;
+    }
+}
+
+.bm-morph-shape {
+    fill: #000000;
+}
+
+.bm-item-list {
+    color: #ffffff;
+    padding: 2rem 1rem;
+}
+
+.bm-item {
+    display: inline-block;
+    margin-bottom: 15px;
+    & img {
+        width: 22px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+}
+
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+/* END - Burger-menu styles */
+
+/* START - Slick-slider custom styles */
+.slick-slider {
+    vertical-align: middle;
+    & h3 {
+        font-weight: lighter;
+        color: #000000;
+    }
+}
+.slick-track{
+    padding-top: 25px;
+}
+.slick-slide {
+    text-align: center;
+    opacity: 0.5;
+    & img {
+        width: 100px;
+        margin: 30px auto;
+        position: relative;
+    }
+    & button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.75rem;
+        border:0;
+        background: rgb(245, 245, 245);
+        color: rgb(210, 210, 210);
+        position: relative;
+        top: -50px;
+        right: -50px;
+    }
+    & button.done {
+        background: rgb(164, 219, 127);
+        color: rgb(255, 255, 255);
+    }
+}
+.slick-slide.slick-center {
+    opacity: 1;
+    & img {
+        transform: scale(1.1);
+        margin-left: auto;
+        margin-right: auto;
+        width: 125px;
+        vertical-align: middle;
+        margin-top: 0px;
+    }
+    & h3 {
+        font-size: 1.25rem;
+        margin-top: -10px;
+    }
+
+}
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(6, 78, 138);
+}
+/* END - Slick-slider custom styles */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    section {
+        & .objectsummary, .filters {
+            & .left {
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            & .center {
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+            & .right {
+                grid-column-start: 3;
+                grid-column-end: -1;
+            }
+            & h2 {
+                font-size: 1.25rem;
+                margin: 15px auto;
+            }
+        }
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }

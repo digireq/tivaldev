@@ -4,16 +4,25 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
+    "react-burger-menu": "^2.5.2",
+    "react-circular-progressbar": "^1.0.0",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-slick": "^0.23.1",
+    "react-sticky": "^6.0.3",
+    "react-switch": "^3.0.4",
+    "sass": "^1.9.1",
+    "slick-carousel": "^1.8.1",
+    "yarn": "^1.7.0"
   },
   "scripts": {
     "build": "yarn sass:build && react-scripts build",
     "eject": "react-scripts eject",
-    "sass:watch" : "sass --watch src/styles/scss:src/styles/css",
+    "sass:watch": "sass --watch src/styles/scss:src/styles/css",
     "sass:build": "sass --update src/styles/scss:src/styles/css",
     "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
     "node-sass": "^4.9.0"
