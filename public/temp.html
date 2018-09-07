@@ -1,0 +1,47 @@
+import Switch from "react-switch";
+
+
+  <section>
+    <img src={process.env.PUBLIC_URL + '/images/filter.png'} alt="" />
+    <label htmlFor="normal-switch">
+      <Switch
+        onChange={this.handleChange}
+        checked={this.state.checked}
+        height={18}
+        width={50}
+        offColor="#c9c9c9"
+        onColor="#064e8a"
+        uncheckedIcon={
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+              color: "white",
+              paddingRight: 2,
+              fontSize: "10px",
+            }}
+          >
+            Dölj
+          </div>
+        }
+        checkedIcon={
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+              color: "white",
+              paddingLeft: 2,
+              fontSize: "10px",
+            }}
+          >
+            Visa
+          </div>
+        }
+        id="normal-switch"
+      />
+    </label>
+  </section>
