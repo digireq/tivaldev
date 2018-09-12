@@ -14,40 +14,78 @@ body {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(14, 1fr);
 }
-
-header {
+.menubutton {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
+    bottom: 6px;
+    right: 6px;
+    z-index: 101;
+    width: 60px;
     height: 60px;
-    background-color: rgb(6, 78, 138);
+    background: rgb(235, 235, 235);
+    border-radius: 50%;
+    -webkit-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.50);
+    -moz-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.50);
+    box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.50);
     display: flex;
     justify-content: center;
     align-items: center;
     & img {
-        height: 40px;
+        width: 30px;
     }
-    & .notifications {
-        display: table;
+}
+.menubuttonclose {
+    position: fixed;
+    bottom: 60px;
+    right: 6px;
+    z-index: 101;
+    width: 30px;
+    height: 30px;
+    background: rgb(80, 186, 194);
+    border-radius: 50%;
+    border: 1px solid rgb(200, 200, 200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+        width: 15px;
+    }
+}
+header {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 75px;
+    z-index: 100;
+    background: rgb(235, 235, 235);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgb(200, 200, 200);
+    .menulink {
+        width: 60px;
+        height: 60px;
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 50%;
+        margin: 0 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
         & img {
-            height: 22px;
-            position: fixed;
-            left: 40px;
-            top: 18px;
-            cursor: pointer;
+            height: 35px;
         }
         & .counter {
             border-radius: 50%;
             height: 10px;
             width: 10px;
-            background: #ffffff;
-            border: 1px solid rgb(6, 78, 138);
-            position: fixed;
-            left: 53px;
-            top: 31px;
-            color: rgb(6, 78, 138);
+            background: rgb(66, 66, 66);
+            position: absolute;
+            right: 7px;
+            bottom: 10px;
+            color: rgb(255, 255, 255);
             font-size: 8px;
             font-weight: bold;
             display: table-cell;
@@ -58,15 +96,16 @@ header {
 }
 
 section {
-    grid-column: 2 / 12;
-    grid-row: 2 / -1;
-    height: 90vh;
+    grid-column: 1 / -1;
+    grid-row: 1 / 15;
+    padding-bottom: 60px;
     text-align: center;
-    padding-bottom: 100px;
     & .objectsummary {
         text-align: center;
         width: 100%;
-        border-bottom: 1px solid rgb(210, 210, 210);
+        border: 1px solid rgb(80, 186, 194);
+        padding: 5px;
+        margin-left: -5px;
         & img {
             width: 15px;
             margin-right: 5px;
@@ -90,18 +129,23 @@ section {
     & h1 {
         font-weight: normal;
         font-size: 1.75rem;
-        margin-top: 10px;
+        margin-top: 20px;
         margin-bottom: 10px;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        padding-bottom: 5px;
     }
     & h2 {
         font-weight: normal;
-        color: rgb(6, 78, 138);
-        font-size: 1.25rem;
-        margin: 10px auto 5px auto;
+        color: rgb(80, 186, 194);
+        font-size: 1.5rem;
+        margin: 10px auto 25px auto;
+    }
+    & h3 {
+        font-weight: lighter;
     }
     & h4 {
         font-weight: normal;
-        color: rgb(6, 78, 138);
+        color: rgb(0, 0, 0);
         font-size: 1rem;
         margin: 0;
         margin-left: 5px;
@@ -144,20 +188,126 @@ section {
             color: rgb(150, 150, 150);
         }
     }
-}
-
-.CategoriesClass, .SubCategoriesClass {
-    margin-top: 20%;
+    & .contactperson {
+        & .header {
+            font-weight: normal;
+            color: rgb(0, 0, 0);
+            font-size: 1rem;
+            margin: 10px auto 0px auto;
+        }
+        & p {
+            font-size: 10px;
+            & img {
+                height: 10px;
+                margin-right: 5px;
+            }
+        }
+        & .contactimg {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            background: rgb(80, 186, 194);
+            -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+            box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 35px;
+            & img {
+                width: 50%;
+            }
+        }
+    }
+    & .notifications {
+        width: 90%;
+        height: 25px;
+        margin: 15px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        cursor: pointer;
+        & .unread {
+            border-radius: 50%;
+            height: 10px;
+            width: 10px;
+            background: rgb(80, 186, 194);
+            margin: auto 10px;
+        }
+        & .read {
+            border-radius: 50%;
+            height: 10px;
+            width: 10px;
+            margin: auto 10px;
+        }
+        & p {
+            text-align: left;
+        }
+    }
+    & .myhomenav {
+        width: 125px;
+        height: 125px;
+        margin: auto;
+        border: 2px solid rgb(6, 78, 138);
+        background: rgb(6, 78, 138);
+        border-radius: 50%;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & img {
+            width: 40%;
+            margin: 0;
+        }
+        & p {
+            margin: 2px;
+            font-weight: bold;
+        }
+    }
+    & .myhomelink {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 0.5rem;
+        display: inline-block;
+        margin: 10px;
+    }
+    & .myhomeheader {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: normal;
+        color: rgb(80, 186, 194);
+        font-size: 1.25rem;
+        margin: 25px auto 0 auto;
+        & img {
+            width: 40px;
+            margin-right: 15px;
+        }
+    }
+    & button {
+        width: 70%;
+        color: rgb(255, 255, 255);
+        border:1px solid rgb(80, 186, 194);
+        background: rgb(80, 186, 194);
+        font-size: 1rem;
+        margin: 5px auto;
+        padding: 5px 10px;
+    }
 }
 .fullbtnaccept {
     position: fixed;
-    bottom: 15px;
+    bottom: 90px;
     left: 15px;
     right: 15px;
     cursor: pointer;
     text-align: center;
-    background: rgb(6, 78, 138);
-    background-image: url('/images/acceptbtn.png');
+    background: rgb(80, 186, 194);
+    // background-image: url('/images/acceptbtn.png');
     background-repeat: no-repeat;
     background-position: -7px -12px;
     background-size: 70px;
@@ -172,7 +322,7 @@ section {
     right: 15px;
     cursor: pointer;
     text-align: center;
-    background: rgb(6, 78, 138);
+    background: rgb(80, 186, 194);
     background-image: url('/images/changebtn.png');
     background-repeat: no-repeat;
     background-position: -7px -12px;
@@ -188,7 +338,7 @@ section {
     width: 45%;
     cursor: pointer;
     text-align: center;
-    background: rgb(6, 78, 138);
+    background: rgb(80, 186, 194);
     background-image: url('/images/acceptbtn.png');
     background-repeat: no-repeat;
     background-position: -7px -12px;
@@ -220,7 +370,7 @@ section {
     width: 45%;
     cursor: pointer;
     text-align: center;
-    background: rgb(6, 78, 138);
+    background: rgb(80, 186, 194);
     background-image: url('/images/changebtn.png');
     background-repeat: no-repeat;
     background-position: -7px -12px;
@@ -259,14 +409,14 @@ section {
 }
 .productcategories {
     padding: 5px 10px;
-    border: 1px solid rgb(6, 78, 138);
+    border: 1px solid rgb(80, 186, 194);
     margin: 0 -1px 0 0;
-    color: rgb(6, 78, 138);
+    color: rgb(80, 186, 194);
     display: inline;
     font-size: 0.75rem;
 }
 .productcategories.active {
-    background: rgb(6, 78, 138);
+    background: rgb(80, 186, 194);
     color: #ffffff;
 }
 footer {
@@ -278,104 +428,98 @@ footer {
     align-items: center;
 }
 
-/* START - Burger-menu custom styles */
-.bm-burger-button {
-    position: fixed;
-    width: 20px;
-    height: 18px;
-    right: 36px;
-    top: 20px;
-}
+// /* START - Burger-menu custom styles */
+// .bm-burger-button {
+//     position: fixed;
+//     right: 31.5px;
+//     top: 31.5px;
+//     width: 20px;
+//     height: 18px;
+// }
+// .bm-burger-bars {
+//     background: #ffffff;
+// }
 
-.bm-burger-bars {
-    background: #ffffff;
-}
+// .bm-cross-button {
+//     height: 30px;
+//     width: 30px;
+// }
 
-.bm-cross-button {
-    height: 30px;
-    width: 30px;
-}
+// .bm-cross {
+//     background: #696969;
+// }
 
-.bm-cross {
-    background: #696969;
-}
+// .bm-menu {
+//     background: #ffffff;
+//     padding: 0.5rem;
+//     font-size: 1.20rem;
+//     width: 320px;
+//     & a:link {
+//         color: rgb(6, 78, 138);
+//         text-decoration: none;
+//     }
+//     & a:visited {
+//         color: rgb(6, 78, 138);
+//         text-decoration: none;
+//     }
+//     & a:focus {
+//         color: rgb(6, 78, 138);
+//         text-decoration: none;
+//     }
+//     & a:hover {
+//         color: rgb(6, 78, 138);
+//         text-decoration: none;
+//     }
+// }
 
-.bm-menu {
-    background: #ffffff;
-    padding: 0.5rem;
-    font-size: 1.20rem;
-    width: 320px;
-    & a:link {
-        color: rgb(6, 78, 138);
-        text-decoration: none;
-    }
-    & a:visited {
-        color: rgb(6, 78, 138);
-        text-decoration: none;
-    }
-    & a:focus {
-        color: rgb(6, 78, 138);
-        text-decoration: none;
-    }
-    & a:hover {
-        color: rgb(6, 78, 138);
-        text-decoration: none;
-    }
-}
+// .bm-morph-shape {
+//     fill: #000000;
+// }
 
-.bm-morph-shape {
-    fill: #000000;
-}
+// .bm-item-list {
+//     color: #ffffff;
+//     padding: 2rem 1rem;
+// }
 
-.bm-item-list {
-    color: #ffffff;
-    padding: 2rem 1rem;
-}
+// .bm-item {
+//     display: inline-block;
+//     margin-bottom: 15px;
+//     & img {
+//         width: 22px;
+//         margin-right: 10px;
+//         vertical-align: middle;
+//     }
+// }
 
-.bm-item {
-    display: inline-block;
-    margin-bottom: 15px;
-    & img {
-        width: 22px;
-        margin-right: 10px;
-        vertical-align: middle;
-    }
-}
-
-.bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-}
-/* END - Burger-menu styles */
+// .bm-overlay {
+//     background: rgba(0, 0, 0, 0.3);
+// }
+// /* END - Burger-menu styles */
 
 /* START - Slick-slider custom styles */
 .slick-slider {
-    vertical-align: middle;
-    & h3 {
-        font-weight: lighter;
-        color: #000000;
-    }
-}
-.slick-track{
-    padding-top: 25px;
+    width: 100%;
+    margin-top: -25px;
 }
 .slick-slide {
     text-align: center;
     opacity: 0.5;
+    position: relative;
     & img {
-        width: 100px;
+        width: 100%;
         margin: 30px auto;
-        position: relative;
     }
     & button {
-        width: 40px;
-        height: 40px;
-        font-size: 1.75rem;
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
         border:0;
         background: rgb(245, 245, 245);
         color: rgb(210, 210, 210);
-        position: relative;
-        top: -50px;
-        right: -50px;
+        position: absolute;
+        top: 35px;
+        right: 10px;
+        border: 2px solid rgb(255, 255, 255);
     }
     & button.done {
         background: rgb(164, 219, 127);
@@ -384,24 +528,23 @@ footer {
 }
 .slick-slide.slick-center {
     opacity: 1;
-    & img {
-        transform: scale(1.1);
-        margin-left: auto;
-        margin-right: auto;
-        width: 125px;
-        vertical-align: middle;
-        margin-top: 0px;
-    }
-    & h3 {
-        font-size: 1.25rem;
-        margin-top: -10px;
-    }
+    // & h3 {
+    //     font-size: 4rem;
+    //     color: rgb(255, 255, 255);
+    //     font-weight: lighter;
+    //     position: absolute;
+    //     bottom:-20px;
+    //     left: 25px;
+    //     text-shadow: 2px 2px 15px rgb(0, 0, 0);
+    //     opacity: 0.75;
+    // }
 
 }
 .slick-prev:before,
 .slick-next:before {
-  color: rgb(6, 78, 138);
+  color: rgb(80, 186, 194);
 }
+
 /* END - Slick-slider custom styles */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

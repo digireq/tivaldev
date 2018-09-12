@@ -10,9 +10,10 @@ class Overview extends Component {
         return (
             <section>
                 <h1>Översikt</h1>
+                <h2>BRF Blåsippan - Lgh 1008</h2>
                 <div className="objectsummary">
-                    <h2>BRF Blåsippan - Lgh 1008</h2>
-                    <p>Tillvalsprocess</p>
+                    
+                    <h3>Tillvalsprocess</h3>
                     {/* <ProgressbarCost
                     percentage={totalCost}
                     text={`${totalCost}%`}
@@ -40,10 +41,18 @@ class Overview extends Component {
                     <p>97 230 SEK</p>
                     </div>
                     <div className="costsummary">
+                    <h4>Rabatter</h4>
+                    <p>12 540 SEK</p>
+                    </div>
+                    <div className="costsummary">
                     <h4>Kvar till nästa rabattnivå</h4>
-                    <p><b>2 475 SEK</b></p>
+                    <p>2 475 SEK</p>
+                    <button>Rabattnivåer?</button>
                     </div>
                 </div>
+                <h3>Datum</h3>
+                <p>Tillvalsprocessen stängs 2018-12-01<br /><br />Sista datum för att godkänna och signera avtalen är 2018-12-10</p>
+                <button>Granska avtal</button>
             </section>
         );
     }

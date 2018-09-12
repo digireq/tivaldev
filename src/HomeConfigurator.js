@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SimpleSlider from './MainCategorySlider';
 import SimpleSlider2 from './SubCategorySlider';
 
+
 class Category extends Component {
     render() {
         return (
@@ -29,7 +30,6 @@ class Products extends Component {
         return (
             <div id="Products" className="ProductsClass">
                 <h2>Kakel</h2>
-                <br />
                 <div className="productcategories active">Rekommenderade</div><div className="productcategories">Standard</div><div className="productcategories">Premium</div>
                 <br /><br /><br />
                 <h4>&#10003; Rekommenderade</h4>
@@ -90,7 +90,7 @@ class Products extends Component {
     }
 }
 
-class MyHome extends Component {
+class HomeConfigurator extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -118,7 +118,7 @@ class MyHome extends Component {
     render() {
         return (
             <section>
-                <h1>Min bostad</h1>
+                <h1>Tillvalsdesign</h1>
 
                 {this.state.category && <Category />}
                 {this.state.category && <div className="fullbtnaccept" onClick={this.handleClick}>Visa KÖK</div>}
@@ -130,11 +130,9 @@ class MyHome extends Component {
                 {this.state.products && <Products />}
                 {this.state.products && <div className="halfbtnchange" onClick={this.handleProducts}>Byt rum/kategori</div>}
                 {this.state.products && <div className="halfbtnundec" onClick={this.handleProducts}>Välj Kakel</div>}
-
-                {/* <div className="fullwidthbtn">Se bänkskivor</div> */}
             </section>  
         );
     }
   }
 
-  export default MyHome;
+  export default HomeConfigurator;
