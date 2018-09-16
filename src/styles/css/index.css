@@ -17,24 +17,26 @@ body {
   grid-template-rows: repeat(14, 1fr);
 }
 
+.backbtn {
+  width: 25px;
+  position: fixed;
+  top: 18px;
+  left: 20px;
+}
+
 .menubutton {
   position: fixed;
-  bottom: 6px;
-  right: 6px;
+  top: 5px;
+  right: 5px;
   z-index: 101;
-  width: 60px;
-  height: 60px;
-  background: #ebebeb;
-  border-radius: 50%;
-  -webkit-box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .menubutton img {
-  width: 30px;
+  width: 25px;
 }
 
 .menubuttonclose {
@@ -134,16 +136,16 @@ section .objectsummary .CircularProgressbar {
 }
 section h1 {
   font-weight: normal;
-  font-size: 1.75rem;
-  margin-top: 20px;
+  font-size: 1.55rem;
+  margin-top: 15px;
   margin-bottom: 10px;
   border-bottom: 1px solid #c8c8c8;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 section h2 {
   font-weight: normal;
   color: #50bac2;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 10px auto 25px auto;
 }
 section h3 {
@@ -305,7 +307,7 @@ section button {
 
 .fullbtnaccept {
   position: fixed;
-  bottom: 90px;
+  bottom: 35px;
   left: 15px;
   right: 15px;
   cursor: pointer;
@@ -321,7 +323,7 @@ section button {
 
 .fullbtnchange {
   position: fixed;
-  bottom: 15px;
+  bottom: 35px;
   left: 15px;
   right: 15px;
   cursor: pointer;
@@ -338,7 +340,7 @@ section button {
 
 .halfbtnaccept {
   position: fixed;
-  bottom: 15px;
+  bottom: 35px;
   right: 15px;
   width: 45%;
   cursor: pointer;
@@ -355,7 +357,7 @@ section button {
 
 .halfbtnundec {
   position: fixed;
-  bottom: 15px;
+  bottom: 35px;
   right: 15px;
   width: 45%;
   cursor: pointer;
@@ -372,7 +374,7 @@ section button {
 
 .halfbtnchange {
   position: fixed;
-  bottom: 15px;
+  bottom: 35px;
   left: 15px;
   width: 45%;
   cursor: pointer;

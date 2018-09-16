@@ -10,7 +10,7 @@ import Settings from "./Settings";
 import Notifications from "./Notifications";
 import HomeConfigurator from "./HomeConfigurator";
 import Overview from "./Overview";
-import menuicon from './images/menubtn.png';
+import menuicon from './images/menubtn3.png';
 import menucloseicon from './images/menuclosebtn2.png';
 import myhomeimg from './images/myhome.png';
 import contactimg from './images/contact.png';
@@ -19,6 +19,7 @@ import notificationsimg from './images/notifications.png';
 import newproductionimg from './images/newproduction.png';
 import aftermarketimg from './images/aftermarket.png';
 import redesignimg from './images/redesign.png';
+import backbtn from './images/backbtn2.png';
 
 class Menu extends Component {
   render() {
@@ -84,6 +85,7 @@ handleMenuClick() {
           <Route path="/homeconfigurator" component={HomeConfigurator}/>
           <Route path="/overview" component={Overview}/>
           <div onClick={this.handleMenuClick} className= {this.state.menuactive ? "menubuttonclose" : "menubutton"}><img alt="" src={this.state.menuactive? menucloseicon: menuicon} /></div>
+          <img src={backbtn} alt="" className="backbtn" />
           {this.state.menuactive && <Menu />}
         </div>
       </HashRouter>
