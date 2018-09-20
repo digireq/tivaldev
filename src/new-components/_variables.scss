@@ -1,0 +1,34 @@
+// Colors
+$color-white: #fff;
+$color-white-2: #f3edf0;
+$color-white-3: #dcdbe3;
+$color-pink: #fe6199;
+$color-pink-light: #e388ac;
+$color-purple: #684bd1;
+$color-purple-dark: #4a4958;
+$color-purple-dark-2: #4d4d76;
+$color-purple-dark-3: #62606e;
+$color-teal: #40c9d1;
+
+// Gradients
+$gradient-pink-purple: linear-gradient(140deg, $color-pink, $color-purple);
+
+// Spacing
+$spacing-1: 2.5px;
+$spacing-2: 5px;
+$spacing-3: 7.5px;
+$spacing-4: 10px;
+$spacing-5: 15px;
+$spacing-6: 20px;
+$spacing-7: 25px;
+$spacing-8: 30px;
+$spacing-9: 35px;
+$spacing-10: 40px;
+
+// Font sizes
+$font-size-default: 1.7rem; // 17px
+$font-size-sm: 1.5rem;
+$font-size-md: 2rem;
+$font-size-lg: 3rem;
+
+$page-max-width: 1400px;

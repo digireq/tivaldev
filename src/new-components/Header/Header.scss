@@ -1,0 +1,47 @@
+@import '../_variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-10 0;
+  color: $color-white;
+
+  &__brand {
+    font-size: $font-size-lg;
+    font-weight: bold;
+  }
+
+  &__links {
+    display: flex;
+    font-weight: 600;
+    margin: 0;
+    list-style: none;
+
+    a {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      text-transform: capitalize;
+      margin: 0 $spacing-5;
+      padding: $spacing-4 0;
+
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: $color-pink-light;
+        border-radius: 50px;
+        opacity: 0;
+        top: 110%;
+        transition: all 0.15s ease-in-out;
+      }
+
+      &:hover::after {
+        top: 100%;
+        opacity: 1;
+      }
+    }
+  }
+}
