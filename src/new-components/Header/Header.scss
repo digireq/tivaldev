@@ -24,6 +24,7 @@
       text-transform: capitalize;
       margin: 0 $spacing-5;
       padding: $spacing-4 0;
+      white-space: nowrap;
 
       &::after {
         position: absolute;

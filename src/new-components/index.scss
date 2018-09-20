@@ -12,14 +12,18 @@ html, body {
   font-size: $font-size-default;
   font-family: 'Source Sans Pro', sans-serif;
   background-image: $gradient-pink-purple;
+  padding: 0 $spacing-10;
 
   * {
     box-sizing: border-box;
   }
 
   & > .page-content {
-    padding: 0 $spacing-10;
     max-width: $page-max-width;
     margin: auto;
   }
+}
+
+.sb-wrapper {
+  padding: 30px;
 }
