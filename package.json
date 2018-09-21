@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-router-dom": "^4.3.1",
     "react": "^16.4.1",
     "react-burger-menu": "^2.5.2",
     "react-circular-progressbar": "^1.0.0",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
+    "react-scripts-ts": "2.17.0",
     "react-slick": "^0.23.1",
     "react-sticky": "^6.0.3",
     "react-switch": "^3.0.4",
@@ -17,15 +18,20 @@
     "yarn": "^1.7.0"
   },
   "scripts": {
-    "build": "yarn sass:build && react-scripts build",
-    "eject": "react-scripts eject",
+    "build": "yarn sass:build && react-scripts-ts build",
     "sass:watch": "sass --watch src/styles/scss:src/styles/css",
     "sass:build": "sass --update src/styles/scss:src/styles/css",
-    "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom",
+    "start": "react-scripts-ts start",
+    "test": "react-scripts-ts test --env=jsdom",
     "deploy": "firebase deploy"
   },
   "devDependencies": {
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.3",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.10.2",
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.7",
+    "@types/react-router-dom":"^4.3.1",
+    "typescript": "^3.0.3"
   }
 }
