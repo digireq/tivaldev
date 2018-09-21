@@ -5,9 +5,6 @@ import Contact from './page-components/Contact';
 import { Menu } from './layout-components/Menu';
 
 
-
-
-
 export default class Root extends React.Component {
   render() {
     return (
