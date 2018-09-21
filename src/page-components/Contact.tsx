@@ -3,11 +3,13 @@
 // import email from './images/email.png';
 import { Component } from 'react';
 import * as React from 'react';
+import { Title } from 'src/layout-components/Title';
 
 class Contact extends Component {
   render() {
     return (
       <section>
+        <Title title="- Kontakt"/>
         <h1>Kontakt</h1>
         <div className="contactperson">
           <div className="contactimg">

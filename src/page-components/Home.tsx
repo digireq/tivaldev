@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Title } from 'src/layout-components/Title';
 
 class Home extends React.Component {
   // constructor() {
@@ -6,7 +7,10 @@ class Home extends React.Component {
   // }
   render() {
     return (
-      <div>home</div>
+      <React.Fragment>
+        <Title title="- Hem"/>
+        home
+      </React.Fragment>
     )
   }
 }

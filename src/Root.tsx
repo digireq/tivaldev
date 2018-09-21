@@ -4,22 +4,22 @@ import Home from './page-components/Home';
 import Contact from './page-components/Contact';
 import { Menu } from './layout-components/Menu';
 
+
+
+
+
 export default class Root extends React.Component {
   render() {
     return (
       <React.Fragment>
         <Router>
           <React.Fragment>
-            
             <Menu />
-
             <Route exact path='/' component={Home} />
             <Route exact path='/contact' component={Contact} />
           </React.Fragment>
-
         </Router>
       </React.Fragment>
-
     );
   }
 }
