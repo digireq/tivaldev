@@ -3,7 +3,23 @@ import * as React from 'react';
 import Home from './page-components/Home';
 import Contact from './page-components/Contact';
 import { Menu } from './layout-components/Menu';
+import * as firebase from 'firebase';
+import { getAllCategories } from 'src/utils/WebApiUtils';
+import Categories from 'src/page-components/Categories';
+import Category from 'src/page-components/Category';
 
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyBoMvv69uQbJXdcd37O1jFdEElou47AqKE',
+  authDomain: 'tivaldev.firebaseapp.com',
+  projectId: 'tivaldev'
+});
+// Initialize Cloud Firestore through Firebase
+export const db = firebase.firestore();
+// Disable deprecated features
+db.settings({
+  timestampsInSnapshots: true
+});
 
 export default class Root extends React.Component {
   render() {
@@ -14,6 +30,8 @@ export default class Root extends React.Component {
             <Menu />
             <Route exact path='/' component={Home} />
             <Route exact path='/contact' component={Contact} />
+            <Route exact path='/categories' component={Categories} />
+            <Route exact path='/category/:id' component={Category} />
           </React.Fragment>
         </Router>
       </React.Fragment>
@@ -45,7 +63,7 @@ export default class Root extends React.Component {
 // import redesignimg from './images/redesign.png';
 // import backbtn from './images/backbtn2.png';
 
-          {/* <section>
+{/* <section>
               <Hej a='a'/>
               <h1>Min bostad</h1>
               <div className="myhomeheader">

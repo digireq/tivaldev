@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 export const Menu = () => (
   <React.Fragment>
-    <NavLink to="/"><button>home</button></NavLink>
-    <NavLink to="/contact"><button>contact</button></NavLink>
+    <NavLink to="/"><button>Home</button></NavLink>
+    <NavLink to="/categories"><button>Categories</button></NavLink>
+    <NavLink to="/contact"><button>Contact</button></NavLink>
   </React.Fragment>
 )

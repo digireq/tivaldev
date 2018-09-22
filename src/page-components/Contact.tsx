@@ -12,9 +12,8 @@ class Contact extends Component {
 
     return (
       <React.Fragment>
-        <Title title="- Kontakt" />
+        <Title title=" - Kontakt" />
         <section>
-          <Title title="- Kontakt" />
           <h1>Kontakt</h1>
           <div className="contactperson">
             <div className="contactimg">

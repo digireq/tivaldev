@@ -8,9 +8,8 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Title title="- Hem" />
+        <Title title=" - Hem" />
         <section>
-          <Title title="- Kontakt" />
           <h1>Hem</h1>
           <div className="contactperson">
             <div className="contactimg">
