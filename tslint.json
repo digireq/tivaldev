@@ -8,7 +8,8 @@
     "ordered-imports": false,
     "no-console": false,
     "member-access": [true, "no-public"],
-    "jsx-boolean-value": false
+    "jsx-boolean-value": false,
+    "jsx-no-lambda": false
   },
   "linterOptions": {
     "exclude": [
