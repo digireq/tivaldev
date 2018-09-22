@@ -8,9 +8,20 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Title title="- Hem"/>
-        home
-      </React.Fragment>
+        <Title title="- Hem" />
+        <section>
+          <Title title="- Kontakt" />
+          <h1>Hem</h1>
+          <div className="contactperson">
+            <div className="contactimg">
+              {/* <img src={contactperson} /> */}
+            </div>
+            <div className="header">Välkommen</div>
+            {/* <p><img alt="" src={phone} />+46 08 985 25 85</p> */}
+            {/* <p><img alt="" src={email} />fastighetsforvaltare@tival.com</p> */}
+          </div>
+        </section>
+      </React.Fragment >
     )
   }
 }
