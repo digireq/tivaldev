@@ -1,38 +1,41 @@
 import * as React from 'react';
 import { Title } from 'src/layout-components/Title';
-import { getAllCategories } from 'src/utils/WebApiUtils';
+import { getCategory } from 'src/utils/WebApiUtils';
 import { ICategory } from '../types/ICategory';
-import { NavLink } from 'react-router-dom';
 
 interface IProps {
   match: any;
 }
 
-export default class Category extends React.Component<IProps, {}> {
+interface IState {
+  category: ICategory,
+  loading: boolean;
+}
+
+export default class Category extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
 
     this.state = {
-      // categories: [],
-      // loading: true
+      category: { name: "", id: "" },
+      loading: true
     }
 
-    console.log(props);
   }
 
   async componentDidMount() {
-    // this.setState({ categories: await getAllCategories(), loading: false });
+    this.setState({ category: await getCategory(this.props.match.params.id), loading: false });
   }
 
   render() {
-    const { id } = this.props.match.params;
-    // const { categories, loading } = this.state;
-    // console.log(categories);
+    const { category, loading } = this.state;
     return (
       <React.Fragment>
-        <Title title={` - ${id}`} />
-        <h1>Welcome to {id}</h1>
-        <small>playing jurrasic park theme song...</small>
+        {category.name && <Title title={` - ${category.name}`} />}
+        <h1>Welcome to {category.name}</h1>
+
+        {loading && (<small>loading</small>)}
+        {!loading && (<small>playing jurrasic park theme song...</small>)}
       </React.Fragment >
     )
   }

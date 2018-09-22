@@ -9,3 +9,9 @@ export const getAllCategories = async (): Promise<ICategory|any> => {
     return {id: doc.id, ...doc.data()}
   });
 }
+
+export const getCategory = async (id: string): Promise<ICategory|any> => {
+  const docRef = db.collection("categories").doc(id);
+  const doc = await docRef.get();
+  return await doc.data();
+}

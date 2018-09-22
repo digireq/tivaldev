@@ -27,7 +27,6 @@ export default class Categories extends React.Component<{}, IState> {
   render() {
 
     const { categories, loading } = this.state;
-    console.log(categories);
     return (
       <React.Fragment>
         <Title title=" - Kategorier" />

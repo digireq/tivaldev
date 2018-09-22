@@ -601,3 +601,15 @@ footer {
   opacity: 1;
   transition: opacity 250ms ease-in;
 }
+
+a button {
+    background-color: lightblue;
+    border: 1px solid lightskyblue;
+    padding: 8px 16px;
+    transition: all 0.3;
+    margin: 4px;
+}
+
+a.active button {
+    background-color: lightgreen;
+}
