@@ -6,6 +6,7 @@ import { Menu } from 'src/components/layout/Menu';
 import Home from 'src/components/page/Home';
 import Contact from 'src/components/page/Contact';
 import { GenerateFakeDb } from './utils/MigrationUtils';
+import { routes } from 'src/routes';
 
 
 export default class Root extends React.Component {
@@ -20,10 +21,15 @@ export default class Root extends React.Component {
         <Router>
           <React.Fragment>
             <Menu />
-            <Route exact path='/' component={Home} />
-            <Route exact path='/contact' component={Contact} />
-            <Route exact path='/categories' component={Categories} />
-            <Route exact path='/category/:id' component={Category} />
+            
+            { routes.map(route => (
+              <Route key={route.path} 
+                exact={route.exact} 
+                path={route.path} 
+                component={route.component} 
+              />
+            )) }
+
           </React.Fragment>
         </Router>
       </React.Fragment>
