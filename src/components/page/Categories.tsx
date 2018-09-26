@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Title } from 'src/layout-components/Title';
 import { getAllCategories } from 'src/utils/WebApiUtils';
-import { ICategory } from '../types/ICategory';
 import { NavLink } from 'react-router-dom';
+import { Title } from 'src/components/layout/Title';
+import { ICategory } from 'src/models/Category/ICategory';
+import { ProjectModel } from '../../models/Project/ProjectModel';
 
 
 interface IState {
@@ -15,18 +16,20 @@ export default class Categories extends React.Component<{}, IState> {
     super(props);
 
     this.state = {
-      categories: [],
+      categories: [], 
       loading: true
     }
   }
 
   async componentDidMount() {
-    this.setState({ categories: await getAllCategories(), loading: false });
+    const p = new ProjectModel("projects/demoprojektet");
+    const categories = await p.categories.get();
+    this.setState({ categories, loading: false });
   }
 
   render() {
 
-    const { categories, loading } = this.state;
+    const { loading, categories } = this.state;
     return (
       <React.Fragment>
         <Title title=" - Kategorier" />
@@ -36,7 +39,7 @@ export default class Categories extends React.Component<{}, IState> {
         {categories.length > 0 && (
           <ul>
             {categories.map(category => (
-              <li key={category.id}><NavLink to={`/category/${category.id}`}>{category.name}</NavLink></li>
+              <li key={category.name}><NavLink to={`/category/${category.name}`}>{category.name}</NavLink></li>
             ))}
           </ul>
         )}

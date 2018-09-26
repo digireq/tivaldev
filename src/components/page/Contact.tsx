@@ -3,11 +3,11 @@
 // import email from './images/email.png';
 import { Component } from 'react';
 import * as React from 'react';
-import { Title } from 'src/layout-components/Title';
+import { Title } from 'src/components/layout/Title';
 
 // interface IProps {}
 
-class Contact extends Component {
+export default class Contact extends Component {
   render() {
 
     return (
@@ -58,5 +58,3 @@ class Contact extends Component {
     // );
   }
 }
-
-export default Contact;

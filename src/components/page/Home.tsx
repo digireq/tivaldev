@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { Title } from 'src/layout-components/Title';
+import { Title } from 'src/components/layout/Title';
 
-class Home extends React.Component {
-  // constructor() {
+export default class Home extends React.Component {
 
-  // }
   render() {
     return (
       <React.Fragment>
@@ -24,5 +22,3 @@ class Home extends React.Component {
     )
   }
 }
-
-export default Home;
