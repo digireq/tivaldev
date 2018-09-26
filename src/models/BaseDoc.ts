@@ -23,4 +23,9 @@ export class BaseDoc {
     await db.doc(this.docRef).set(Object.assign({}, this));
     return this.docRef;
   }
+
+  async get() {
+    const doc = await db.doc(this.docRef).get();
+    return doc.data();
+  }
 }
