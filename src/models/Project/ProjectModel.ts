@@ -4,14 +4,14 @@ import { IProject } from 'src/models/Project/IProject';
 import { db } from 'src';
 import { ICategory } from '../Category/ICategory';
 
-type CategoriesType = {
+type Categories = {
   get: () => Promise<ICategory[]>;
 }
 
 export class ProjectModel extends BaseDoc {
   name: string;
   deadline: firestore.Timestamp;
-  categories: CategoriesType
+  categories: Categories
   
   constructor(docRef) {
     super(docRef);
