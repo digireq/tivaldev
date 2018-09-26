@@ -2,18 +2,24 @@ import Home from 'src/components/page/Home';
 import Contact from 'src/components/page/Contact';
 import Categories from 'src/components/page/Categories';
 import Category from 'src/components/page/Category';
+import SubCategoryView from './components/page/SubCategoryView';
+import OptionView from './components/page/OptionView';
 
 type Route = {
   path: string;
   exact: boolean;
   component: any;
 }
-
-export const RouteParams = {
+export type RouteParamsType = {
+  catId: string;
+  subCatId: string;
+  optionId: string;
+}
+const RouteParams = {
   catId: 'catId',
   subCatId: 'subCatId',
   optionId: 'optionId'
-}
+} as RouteParamsType
 
 export const routes = [
   {
@@ -36,24 +42,24 @@ export const routes = [
     exact: true,
     component: Category
   } as Route,
-  {
-    path: `/category/:${RouteParams.catId}/subcategories`, 
-    exact: true,
-    component: Category
-  } as Route,
+  // {
+  //   path: `/category/:${RouteParams.catId}/subcategories`, 
+  //   exact: true,
+  //   component: Category
+  // } as Route,
   {
     path: `/category/:${RouteParams.catId}/subcategory/:${RouteParams.subCatId}`, 
     exact: true,
-    component: Category
+    component: SubCategoryView
   } as Route,
-  {
-    path: `/category/:${RouteParams.catId}/subcategory/:${RouteParams.subCatId}/options`, 
-    exact: true,
-    component: Category
-  } as Route,
+  // {
+  //   path: `/category/:${RouteParams.catId}/subcategory/:${RouteParams.subCatId}/options`, 
+  //   exact: true,
+  //   component: SubCategory
+  // } as Route,
   {
     path: `/category/:${RouteParams.catId}/subcategory/:${RouteParams.subCatId}/option/:${RouteParams.optionId}`, 
     exact: true,
-    component: Category
+    component: OptionView
   } as Route
 ];

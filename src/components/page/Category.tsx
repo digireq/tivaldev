@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { ICategory } from 'src/models/Category/ICategory';
 import { ProjectModel } from 'src/models/Project/ProjectModel';
-import { CategoryModel } from '../../models/Category/CategoryModel';
+import { CategoryModel } from 'src/models/Category/CategoryModel';
 import { Title } from 'src/components/layout/Title';
-import { ISubCategory } from '../../models/SubCategory/ISubCategory';
+import { ISubCategory } from 'src/models/SubCategory/ISubCategory';
 import { NavLink } from 'react-router-dom';
-import { RouteParams } from 'src/routes';
+import { RouteParamsType } from 'src/routes';
 
 interface IProps {
-  match: any;
+  match: {
+    params: RouteParamsType
+  }
 }
 
 interface IState {
@@ -30,18 +32,16 @@ export default class Category extends React.Component<IProps, IState> {
 
   async componentDidMount() {
     const category = new CategoryModel(`projects/demoprojektet/categories/${this.props.match.params.catId}`);
-
-    this.setState({ 
-      category: await category.get(), 
-      subCategories: await category.subCategories.get(), 
-      loading: false 
+    this.setState({
+      category: await category.get(),
+      subCategories: await category.getSubCategories(),
+      loading: false
     });
   }
 
   render() {
     const { loading, category, subCategories } = this.state;
     const { params } = this.props.match;
-    console.log(params);
     return (
       <React.Fragment>
 
@@ -57,11 +57,14 @@ export default class Category extends React.Component<IProps, IState> {
             <hr />
 
             {subCategories.length > 0 && (
-              <ul>
-                {subCategories.map(subCategory => (
-                  <li key={subCategory.name}><NavLink to={`${params[RouteParams.catId]}/subcategory/${subCategory.name}`}>{subCategory.name}</NavLink></li>
-                ))}
-              </ul>
+              <React.Fragment>
+                <h2>SubCategories</h2>
+                <ul>
+                  {subCategories.map(subCategory => (
+                    <li key={subCategory.name}><NavLink to={`${params.catId}/subcategory/${subCategory.name}`}>{subCategory.name}</NavLink></li>
+                  ))}
+                </ul>
+              </React.Fragment>
             )}
 
           </React.Fragment>

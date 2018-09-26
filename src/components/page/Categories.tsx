@@ -16,14 +16,14 @@ export default class Categories extends React.Component<{}, IState> {
     super(props);
 
     this.state = {
-      categories: [], 
+      categories: [],
       loading: true
     }
   }
 
   async componentDidMount() {
     const p = new ProjectModel("projects/demoprojektet");
-    const categories = await p.categories.get();
+    const categories = await p.getCategories();
     this.setState({ categories, loading: false });
   }
 
@@ -36,12 +36,16 @@ export default class Categories extends React.Component<{}, IState> {
 
         {loading && <p>loading</p>}
 
+
         {categories.length > 0 && (
-          <ul>
-            {categories.map(category => (
-              <li key={category.name}><NavLink to={`/category/${category.name}`}>{category.name}</NavLink></li>
-            ))}
-          </ul>
+          <React.Fragment>
+            <h2>Categories: </h2>
+            <ul>
+              {categories.map(category => (
+                <li key={category.name}><NavLink to={`/category/${category.name}`}>{category.name}</NavLink></li>
+              ))}
+            </ul>
+          </React.Fragment>
         )}
       </React.Fragment >
     )

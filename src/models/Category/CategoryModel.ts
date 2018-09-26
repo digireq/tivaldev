@@ -7,13 +7,8 @@ export class CategoryModel extends BaseDoc implements ICategory {
   name: string;
   get: () => Promise<ICategory>;
 
-  subCategories: {
-    get: () => Promise<ISubCategory[]>;
-  }
-
   constructor(docRef) {
     super(docRef);
-    this.subCategories = { get: () => this.getSubCategories() }
   }
 
   async getSubCategories(): Promise<ISubCategory[]> {
